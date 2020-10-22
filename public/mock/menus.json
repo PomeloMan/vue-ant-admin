@@ -1,0 +1,54 @@
+[
+  {
+    "id": 100,
+    "pid": 0,
+    "type": 0,
+    "url": "/home",
+    "name": "首页",
+    "icon": "appstore",
+    "modifier": "admin",
+    "modifiedDate": "1990-01-01T00:00:00.000Z",
+    "status": "Valid",
+    "key": "home",
+    "component": "Home.vue"
+  },
+  {
+    "id": 200,
+    "pid": 0,
+    "type": 0,
+    "url": "/system",
+    "name": "系统管理",
+    "icon": "setting",
+    "modifier": "admin",
+    "modifiedDate": "1990-01-01T00:00:00.000Z",
+    "status": "Valid",
+    "children": [
+      {
+        "id": 201,
+        "pid": 200,
+        "type": 0,
+        "url": "/system/user",
+        "name": "用户管理",
+        "icon": "user",
+        "modifier": "admin",
+        "modifiedDate": "1990-01-01T00:00:00.000Z",
+        "status": "Valid",
+        "key": "user",
+        "component": "system/user/Index.vue"
+      },
+      {
+        "id": 202,
+        "pid": 200,
+        "type": 0,
+        "url": "/system/menu",
+        "name": "菜单管理",
+        "icon": "menu",
+        "modifier": "admin",
+        "modifiedDate": "1990-01-01T00:00:00.000Z",
+        "status": "Valid",
+        "key": "menu",
+        "component": "system/menu/Index.vue"
+      }
+    ]
+  }
+]
