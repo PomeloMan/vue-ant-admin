@@ -1,6 +1,13 @@
 <template>
   <div>
-    <header-component :breadcrumbs="breadcrumbs"></header-component>
+    <header-component
+      :breadcrumbs="breadcrumbs"
+      :searchType="searchType"
+      :searchFormItems="searchFormItems"
+      @onSimpleSearch="onSimpleSearch"
+      @onAdvancedSearch="onAdvancedSearch"
+      @onResize="onResize"
+    ></header-component>
     <div class="content">
       <slot></slot>
       <footer class="footer">
@@ -11,9 +18,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import HeaderComponent from './Header.vue';
-import { Breadcrumb } from './model';
+import { Breadcrumb, SearchFormItem } from './model';
 
 /**
  * 页面主内容布局组件
@@ -24,7 +31,33 @@ import { Breadcrumb } from './model';
   },
 })
 export default class ContainerComponent extends Vue {
-  @Prop() breadcrumbs?: Array<Breadcrumb>;
+  // 面包屑导航栏
+  @Prop()
+  breadcrumbs?: Array<Breadcrumb>;
+  // 搜索类型
+  @Prop({ type: String, required: false, default: 'none' })
+  searchType!: 'none' | 'simple' | 'advance';
+  // 搜索表单字段集描述
+  @Prop()
+  searchFormItems?: Array<SearchFormItem>;
+  // 表单布局
+  @Prop({ type: Number, required: false, default: 2 })
+  column!: number;
+
+  @Emit()
+  onSimpleSearch(value: any) {
+    return value;
+  }
+
+  @Emit()
+  onAdvancedSearch(value: any) {
+    return value;
+  }
+
+  @Emit('onResize')
+  onResize(value: boolean) {
+    return value;
+  }
 }
 </script>
 

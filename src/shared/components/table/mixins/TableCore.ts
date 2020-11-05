@@ -55,7 +55,7 @@ export default class TableCoreMixin<T> extends Mixins(Vue, GlobalConfig) {
     }
   }
 
-  private resize() {
+  resize() {
     if (this.tableInnerScroll) {
       this.$nextTick(() => {
         setTimeout(() => {

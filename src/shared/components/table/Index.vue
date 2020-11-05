@@ -56,7 +56,7 @@ export default class TableComponent extends Mixins(Vue, GlobalConfig) {
   columns!: Array<any>;
   // scroll 表格滚动条
   @Prop({ type: Object, required: false, default: () => ({ x: 0, y: 0 }) })
-  scroll?: {
+  scroll!: {
     x: number;
     y: number;
   };

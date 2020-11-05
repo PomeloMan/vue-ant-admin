@@ -1,5 +1,10 @@
 <template>
-  <app-container :breadcrumbs="breadcrumbs">
+  <app-container
+    :breadcrumbs="breadcrumbs"
+    :searchType="'advanced'"
+    :searchFormItems="searchFormItems"
+    @onResize="resize"
+  >
     <app-table
       :loading="loading"
       :data-source="dataSource"
@@ -25,6 +30,7 @@ import AppContainer from '@/shared/components/container/Index.vue';
 import AppTable from '@/shared/components/table/Index.vue';
 import TableCoreMixin from '@/shared/components/table/mixins/TableCore';
 import TableColumnMixin from './mixins/TableColumn';
+import SearchFormItemsMixin from './mixins/SearchFormItem';
 
 @Component({
   components: {
@@ -34,8 +40,9 @@ import TableColumnMixin from './mixins/TableColumn';
 })
 export default class Index extends Mixins(
   Vue,
+  TableCoreMixin,
   TableColumnMixin,
-  TableCoreMixin
+  SearchFormItemsMixin
 ) {
   // override TableCoreMixin attribute
   dataSourceUrl = '/mock/system/user/page.json';
