@@ -34,7 +34,8 @@
     },
     "component_style": "组件样式",
     "component_styles": {
-      "table_style": "表格组件样式"
+      "table_size": "表格组件大小",
+      "table_inner_scroll": "表格组件内滚动"
     }
   },
   "message": {

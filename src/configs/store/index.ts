@@ -43,7 +43,7 @@ const mutations: MutationTree<RootState> = {
   }
 };
 const actions: ActionTree<RootState, RootState> = {
-  updateRoutes({ commit }) {
+  getRoutes({ commit }) {
     return new Promise((resolve, reject) => {
       http
         .get(api.MENU_LIST)

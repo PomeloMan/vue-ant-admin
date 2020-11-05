@@ -45,8 +45,9 @@ export interface SettingState {
   tableSizes: Array<string>;
   menuStyle: 'sider-dark' | 'sider-light';
   primaryColor: string;
-  tableSize: 'large' | 'middle' | 'small';
   theme: string;
+  tableSize: 'large' | 'middle' | 'small';
+  tableInnerScroll: boolean;
 }
 
 const state: SettingState = {
@@ -55,12 +56,21 @@ const state: SettingState = {
   tableSizes: ['large', 'middle', 'small'],
   menuStyle: 'sider-dark',
   primaryColor: '#1890ff',
-  tableSize: 'middle',
   theme:
     storage.getModuleItem(
       CONSTANT.STORAGE_SETTINGS,
       CONSTANT.STORAGE_SETTINGS_THEME
-    ) || 'light'
+    ) || 'light',
+  tableSize:
+    storage.getModuleItem(
+      CONSTANT.STORAGE_SETTINGS,
+      CONSTANT.STORAGE_SETTINGS_TABLE_SIZE
+    ) || 'middle',
+  tableInnerScroll:
+    storage.getModuleItem(
+      CONSTANT.STORAGE_SETTINGS,
+      CONSTANT.STORAGE_SETTINGS_TABLE_INNER_SCROLL
+    )
 };
 
 const mutations: MutationTree<SettingState> = {
@@ -80,6 +90,14 @@ const mutations: MutationTree<SettingState> = {
       primaryColor
     );
   },
+  updateTheme(state: any, theme: string) {
+    state.theme = theme;
+    storage.setModuleItem(
+      CONSTANT.STORAGE_SETTINGS,
+      CONSTANT.STORAGE_SETTINGS_THEME,
+      theme
+    );
+  },
   updateTableSize(state: any, tableSize: string) {
     state.tableSize = tableSize;
     storage.setModuleItem(
@@ -88,24 +106,32 @@ const mutations: MutationTree<SettingState> = {
       tableSize
     );
   },
-  updateTheme(state: any, theme: string) {
-    state.theme = theme;
+  updateTableInnerScroll(state: any, tableInnerScroll: boolean) {
+    state.tableInnerScroll = tableInnerScroll;
     storage.setModuleItem(
       CONSTANT.STORAGE_SETTINGS,
-      CONSTANT.STORAGE_SETTINGS_THEME,
-      theme
+      CONSTANT.STORAGE_SETTINGS_TABLE_INNER_SCROLL,
+      tableInnerScroll
     );
   }
 };
 
 const actions: ActionTree<SettingState, RootState> = {};
 
+const mapOfPaginationHeight: any = {
+  default: 64,
+  middle: 56,
+  small: 56
+};
 const getters: GetterTree<SettingState, RootState> = {
   menuStyleTheme(state) {
     return state.menuStyle.split('-')[1];
   },
-  tableSize(): 'default' | 'middle' | 'small' {
+  tableSize(state): 'default' | 'middle' | 'small' {
     return state.tableSize === 'large' ? 'default' : state.tableSize;
+  },
+  paginationHeight(state): number {
+    return mapOfPaginationHeight[state.tableSize];
   }
 };
 

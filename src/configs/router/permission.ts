@@ -27,7 +27,7 @@ router.beforeEach(async (to: Route, from: Route, next: NavigationGuardNext) => {
     //   next(`/login?redirect=${to.path}`)
     // }
     if (routes.length === 0) {
-      const dynamicRoutes = await store.dispatch('updateRoutes')
+      const dynamicRoutes = await store.dispatch('getRoutes')
       if (!dynamicRoutes || dynamicRoutes.length === 0) {
         // 没有获取到动态路由信息重新登陆
         next(`/login?redirect=${to.path}`)

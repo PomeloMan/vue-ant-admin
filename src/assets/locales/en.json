@@ -34,7 +34,8 @@
     },
     "component_style": "Component style",
     "component_styles": {
-      "table_style": "Table style"
+      "table_size": "Table size",
+      "table_inner_scroll": "Table inner scroll"
     }
   },
   "message": {

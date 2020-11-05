@@ -24,6 +24,7 @@ export default {
   STORAGE_SETTINGS_MENU_STYLE: 'menuStyle',
   STORAGE_SETTINGS_PRIMARY_COLOR: 'primaryColor',
   STORAGE_SETTINGS_TABLE_SIZE: 'tableSize',
+  STORAGE_SETTINGS_TABLE_INNER_SCROLL: 'tableInnerScroll',
 
   PAGE_LOGIN: 'login',
   PAGE_403: '403',

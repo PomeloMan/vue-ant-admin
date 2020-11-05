@@ -23,7 +23,7 @@ import { Breadcrumb } from './model';
     HeaderComponent,
   },
 })
-export default class Container extends Vue {
+export default class ContainerComponent extends Vue {
   @Prop() breadcrumbs?: Array<Breadcrumb>;
 }
 </script>

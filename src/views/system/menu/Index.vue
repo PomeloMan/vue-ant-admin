@@ -26,7 +26,7 @@
 import { Component, Mixins, Vue } from 'vue-property-decorator';
 import GlobalConfig from '@/shared/configs/GlobalConfig';
 import { Column, Menu } from '../../model';
-import Container from '@/shared/components/container/Container.vue';
+import Container from '@/shared/components/container/Index.vue';
 
 const columns = function (this: Vue): Array<Column> {
   return [

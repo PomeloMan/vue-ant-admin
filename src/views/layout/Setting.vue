@@ -63,7 +63,7 @@
       <h3>{{ $t('settings.component_style') }}</h3>
       <div class="selection-wrapper clearfix">
         <div class="radio-item">
-          {{ $t('settings.component_styles.table_style') }}
+          {{ $t('settings.component_styles.table_size') }}
           <a-radio-group v-model="tableSize" size="small" buttonStyle="solid">
             <a-radio-button
               :key="size"
@@ -75,7 +75,10 @@
             </a-radio-button>
           </a-radio-group>
         </div>
-        <div class="switch-item"></div>
+        <div class="switch-item">
+          {{ $t('settings.component_styles.table_inner_scroll') }}
+          <a-switch v-model="tableInnerScroll" size="small"></a-switch>
+        </div>
       </div>
     </section>
   </a-drawer>
@@ -94,6 +97,7 @@ export default class Setting extends Vue {
   @settingModule.Mutation('updateMenuStyle') updateMenuStyle: any;
   @settingModule.Mutation('updatePrimaryColor') updatePrimaryColor: any;
   @settingModule.Mutation('updateTableSize') updateTableSize: any;
+  @settingModule.Mutation('updateTableInnerScroll') updateTableInnerScroll: any;
   bodyStyle = { height: '100%', padding: '16px', overflow: 'auto' };
   visible = false;
 
@@ -102,6 +106,12 @@ export default class Setting extends Vue {
   }
   set tableSize(tableSize) {
     this.updateTableSize(tableSize);
+  }
+  get tableInnerScroll() {
+    return this.setting.tableInnerScroll;
+  }
+  set tableInnerScroll(tableInnerScroll) {
+    this.updateTableInnerScroll(tableInnerScroll);
   }
 
   // 切换菜单样式
