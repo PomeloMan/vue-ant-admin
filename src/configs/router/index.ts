@@ -69,6 +69,6 @@ export function generateDynamicRoutes(routes: Array<any>): Array<RouteConfig> {
     }
   ];
 
-  console.log(rootRoutes);
+  console.log('routes: ', rootRoutes);
   return rootRoutes;
 }

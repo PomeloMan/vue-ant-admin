@@ -177,3 +177,20 @@ export function load(paths: string | string[]): Promise<any> {
     return Promise.resolve(res);
   });
 }
+
+/**
+ * 获取图片
+ * @param {*} file 图片文件
+ * @example
+ *  getBase64(info.file.originFileObj).then(imageUrl => {
+ *    this.imageUrl = imageUrl;
+ * });
+ */
+export function getBase64(file: File): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
+}

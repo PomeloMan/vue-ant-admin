@@ -35,10 +35,14 @@ export default class TableCoreMixin<T> extends Mixins(Vue, GlobalConfig) {
   __cacheData: Array<T> = [];
 
   /**
-   * tableInnerScroll 更新重新更新 scroll值
+   * tableSize，tableInnerScroll 更新重新更新 scroll值
    */
   @Watch('tableInnerScroll')
   onTableInnerScrollChange() {
+    this.resize();
+  }
+  @Watch('tableSize')
+  onTableSizeChange() {
     this.resize();
   }
 

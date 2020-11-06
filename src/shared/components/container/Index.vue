@@ -1,13 +1,15 @@
 <template>
   <div>
-    <header-component
+    <app-header
       :breadcrumbs="breadcrumbs"
       :searchType="searchType"
       :searchFormItems="searchFormItems"
       @onSimpleSearch="onSimpleSearch"
       @onAdvancedSearch="onAdvancedSearch"
       @onResize="onResize"
-    ></header-component>
+    >
+      <slot name="actions" slot="actions"></slot>
+    </app-header>
     <div class="content">
       <slot></slot>
       <footer class="footer">
@@ -19,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
-import HeaderComponent from './Header.vue';
+import AppHeader from './Header.vue';
 import { Breadcrumb, SearchFormItem } from './model';
 
 /**
@@ -27,7 +29,7 @@ import { Breadcrumb, SearchFormItem } from './model';
  */
 @Component({
   components: {
-    HeaderComponent,
+    AppHeader,
   },
 })
 export default class ContainerComponent extends Vue {

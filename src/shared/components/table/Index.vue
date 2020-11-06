@@ -72,5 +72,8 @@ export default class TableComponent extends Mixins(Vue, GlobalConfig) {
 @import '~@/assets/styles/var.less';
 .table-card .ant-table-wrapper {
   height: 100%;
+  /deep/ .ant-table-pagination {
+    padding: 0 16px;
+  }
 }
 </style>

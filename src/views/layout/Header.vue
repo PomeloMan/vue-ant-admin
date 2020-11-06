@@ -53,9 +53,7 @@ export default class Header extends Vue {
   // 头部导航栏标签样式
   antIconStyle = { margin: 0, fontSize: '18px' };
 
-  mounted() {
-    console.log(this.isCollapsed);
-  }
+  // mounted() {}
 
   collapse() {
     this.updateIsCollapsed(!this.isCollapsed);

@@ -66,11 +66,10 @@ const state: SettingState = {
       CONSTANT.STORAGE_SETTINGS,
       CONSTANT.STORAGE_SETTINGS_TABLE_SIZE
     ) || 'middle',
-  tableInnerScroll:
-    storage.getModuleItem(
-      CONSTANT.STORAGE_SETTINGS,
-      CONSTANT.STORAGE_SETTINGS_TABLE_INNER_SCROLL
-    )
+  tableInnerScroll: storage.getModuleItem(
+    CONSTANT.STORAGE_SETTINGS,
+    CONSTANT.STORAGE_SETTINGS_TABLE_INNER_SCROLL
+  )
 };
 
 const mutations: MutationTree<SettingState> = {
@@ -119,7 +118,7 @@ const mutations: MutationTree<SettingState> = {
 const actions: ActionTree<SettingState, RootState> = {};
 
 const mapOfPaginationHeight: any = {
-  default: 64,
+  large: 64,
   middle: 56,
   small: 56
 };
