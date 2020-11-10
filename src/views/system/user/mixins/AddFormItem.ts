@@ -51,7 +51,7 @@ const addFormItems = ($this: Vue): Array<AddFormItem> => {
       type: 'upload',
       label: $this.$t('common.avatar'),
       key: 'avatar',
-      // multiple: false
+      multiple: false
     },
     {
       type: 'input',

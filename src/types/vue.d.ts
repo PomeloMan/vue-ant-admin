@@ -7,5 +7,6 @@ declare module 'vue/types/vue' {
     $http: AxiosInstance;
     $moment: moment.Moment;
     $accounting: accounting.Static;
+    $refs: any;
   }
 }

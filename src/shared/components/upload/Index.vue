@@ -5,29 +5,16 @@
       listType="picture-card"
       :fileList="__files"
       :multiple="multiple"
-      :showUploadList="multiple"
+      :showUploadList="true"
       :disabled="disabled"
       :remove="handleRemove"
       :beforeUpload="beforeUpload"
       @preview="handlePreview"
     >
-      <template v-if="!multiple">
-        <div v-if="__files[0] && __files[0].thumbUrl">
-          <a-spin :spinning="uploading">
-            <img :src="__files[0].thumbUrl" style="width: 100%" />
-          </a-spin>
-        </div>
-        <div v-else>
-          <a-icon :type="uploading ? 'loading' : 'plus'" />
-          <div class="ant-upload-text">{{ $t('common.upload') }}</div>
-        </div>
-      </template>
-      <template v-else>
-        <div v-if="__files.length < limit.length">
-          <a-icon :type="uploading ? 'loading' : 'plus'" />
-          <div class="ant-upload-text">{{ $t('common.upload') }}</div>
-        </div>
-      </template>
+      <div v-if="__files.length < limit.length">
+        <a-icon :type="uploading ? 'loading' : 'plus'" />
+        <div class="ant-upload-text">{{ $t('common.upload') }}</div>
+      </div>
     </a-upload>
     <a-modal
       :visible="previewVisible"
@@ -41,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Model, Prop, Vue } from 'vue-property-decorator';
+import { Component, Model, Prop, Vue, Watch } from 'vue-property-decorator';
 import { getBase64 } from '@/shared/utils';
 
 @Component
@@ -78,6 +65,19 @@ export default class FormComponent extends Vue {
   }
   set __files(files) {
     this.$emit('change', files);
+  }
+
+  @Watch('multiple')
+  onMultipleChange() {
+    if (!this.multiple) {
+      this.limit.length = 1;
+    } else {
+      this.limit.length = 3;
+    }
+  }
+
+  created() {
+    this.onMultipleChange();
   }
 
   mounted() {
@@ -166,7 +166,7 @@ export default class FormComponent extends Vue {
               type: file.type,
               uid: file.uid,
             };
-            if (!$this.multiple) {
+            if (!this.multiple) {
               $this.__files = [__file];
             } else {
               $this.__files = [...$this.__files, __file];

@@ -13,6 +13,32 @@
     "component": "Home.vue"
   },
   {
+    "id": 1000,
+    "pid": 0,
+    "type": 0,
+    "url": "/libs",
+    "name": "组件库",
+    "icon": "setting",
+    "modifier": "admin",
+    "modifiedDate": "1990-01-01T00:00:00.000Z",
+    "status": "Valid",
+    "children": [
+      {
+        "id": 1100,
+        "pid": 1000,
+        "type": 0,
+        "url": "/libs/dhtmlx-gantt",
+        "name": "DHTMLX-Gantt",
+        "icon": "user",
+        "modifier": "admin",
+        "modifiedDate": "1990-01-01T00:00:00.000Z",
+        "status": "Valid",
+        "key": "dhtmlx-gantt",
+        "component": "libs/dhtmlx-gantt/Index.vue"
+      }
+    ]
+  },
+  {
     "id": 200,
     "pid": 0,
     "type": 0,
