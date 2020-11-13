@@ -3,12 +3,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { gantt } from 'dhtmlx-gantt';
-import { Task } from './model';
-import { scales } from './config/Index';
+import '@/assets/libs/dhtmlx/gantt/dhtmlxgantt';
+import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
+import { Task } from './model/Index';
+import Scales from './mixins/Scales';
+import Draggable from './mixins/Draggable.vue';
+
+declare const gantt: any;
+
 @Component
-export default class GanttComponent extends Vue {
+export default class GanttComponent extends Mixins(Vue, Scales, Draggable) {
   @Prop({ type: Object, default: () => ({ data: [], links: [] }) })
   data!: { data: Array<any>; links: Array<any> };
 
@@ -34,11 +38,9 @@ export default class GanttComponent extends Vue {
     gantt.i18n.setLocale('cn'); // 国际化配置
     /// initialization
     gantt.config.touch = 'force'; // 点击跟踪任务
-    gantt.config.xml_date = '%Y-%m-%d'; // 配置时间格式化
+    gantt.config.xml_date = '%Y-%m-%d'; // 配置时间格式化（年-月-日）
     // gantt.config.layout = layout; // 配置布局
     gantt.config.row_height = 32; // 每个任务的行高度
-    gantt.config.scales = scales(gantt); // 时间线表头显示年,月(周),日三行
-    gantt.config.scale_height = 24 * 3; // 时间线表头行高
     /// worktime
     gantt.config.work_time = true; // 启用计算工作时间而不是日历时间的持续时间
     gantt.config.correct_work_time = true; // 可以将任务的开始日期和结束日期调整为工作时间（拖动时）
@@ -76,8 +78,22 @@ export default class GanttComponent extends Vue {
     gantt.attachEvent(
       'onTaskSelected',
       (id: any) => {
-        const task = gantt.getTask(id);
-        $this.$emit('task-selected', task);
+        // 删除所有任务节点的选中ClassName
+        gantt.eachTask(function (task: any) {
+          const node = gantt.getTaskNode(task.id);
+          if (node) {
+            node.classList.remove('gantt_selected');
+          }
+        });
+        // 添加当前选中任务节点的ClassName
+        const selectTask = gantt.getTask(id);
+        const selectNode = gantt.getTaskNode(id);
+        if (!selectNode.classList.contains('gantt_selected')) {
+          selectNode.classList.add('gantt_selected');
+        }
+
+        // 触发任务选中事件回调函数
+        $this.$emit('task-selected', selectTask);
       },
       { id: taskSelectedEventId }
     );
@@ -96,21 +112,18 @@ export default class GanttComponent extends Vue {
 </script>
 
 <style>
-@import '~dhtmlx-gantt/codebase/dhtmlxgantt.css';
+@import '~@/assets/libs/dhtmlx/gantt/dhtmlxgantt.css';
+html,
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 /** 周末样式 */
 .gantt_task_cell.week_end {
   background-color: #eff5fd;
 }
 .gantt_task_row.gantt_selected .gantt_task_cell.week_end {
   background-color: #f8ec9c;
-}
-
-.complex_gantt_bar {
-  background: transparent;
-  border: none;
-}
-
-.complex_gantt_bar .gantt_task_progress {
-  display: none;
 }
 </style>
