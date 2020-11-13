@@ -3,6 +3,11 @@
 </template>
 
 <script lang="ts">
+/**
+ * 使用修改过的dhtmlxgantt.js替代npm上的dhtmlx-gantt
+ * 由于完善拖拽功能会使用到 gantt.addTaskLayer方法，需要删除开源代码中的{t.exports=function(t){delete t.addTaskLayer,delete t.addLinkLayer}}
+ */
+// import { gantt } from 'dhtmlx-gantt';
 import '@/assets/libs/dhtmlx/gantt/dhtmlxgantt';
 import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
 import { Task } from './model/Index';
