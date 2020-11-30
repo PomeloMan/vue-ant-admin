@@ -35,6 +35,19 @@
         "status": "Valid",
         "key": "dhtmlx-gantt",
         "component": "libs/dhtmlx-gantt/Index.vue"
+      },
+      {
+        "id": 1200,
+        "pid": 1000,
+        "type": 0,
+        "url": "/libs/threejs",
+        "name": "ThreeJS",
+        "icon": "user",
+        "modifier": "admin",
+        "modifiedDate": "1990-01-01T00:00:00.000Z",
+        "status": "Valid",
+        "key": "threejs",
+        "component": "libs/threejs/Index.vue"
       }
     ]
   },
