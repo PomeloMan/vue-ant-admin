@@ -4,7 +4,7 @@
 
 <script lang="ts">
 // https://wow.techbrood.com/fiddle/38828
-import { Component, Mixins, Prop, Vue } from 'vue-property-decorator';
+import { Component, Mixins, Vue } from 'vue-property-decorator';
 import * as THREE from 'three';
 import TrackballControls from 'three-trackballcontrols';
 
@@ -36,6 +36,8 @@ export default class GanttComponent extends Mixins(Vue) {
   earthParticles: THREE.Object3D = new THREE.Object3D(); // 地球粒子
   cloud = new THREE.Object3D(); // 云层
   coordinates: THREE.Object3D = new THREE.Object3D(); // 坐标
+
+  isRotating = true;
   mounted() {
     // 直接刷新页面，页面布局可能还未完成就进到此方法中，所以使用setTimeout等待布局完成获取元素真实宽高
     setTimeout(() => {
@@ -237,6 +239,12 @@ export default class GanttComponent extends Mixins(Vue) {
         material.userData.opacity;
       material.needsUpdate = true;
     });
+
+    if (this.isRotating) {
+      // 绕Y轴旋转
+      this.earthParticles.rotateY(-Math.PI / 1000);
+      this.cloud.rotateY(-Math.PI / 1000);
+    }
     this.reRender();
   }
 
@@ -281,7 +289,7 @@ export default class GanttComponent extends Mixins(Vue) {
    */
   private initCloud() {
     const XRayMaterial = function (options: any) {
-      let uniforms = {
+      const uniforms = {
         uTex: {
           type: 't',
           value: options.map || new THREE.Texture(),

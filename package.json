@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@antv/g2": "^4.1.0",
     "@types/accounting": "^0.4.1",
     "@types/nprogress": "^0.2.0",
     "accounting": "^0.4.1",
