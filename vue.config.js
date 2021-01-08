@@ -44,5 +44,11 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end();
+    // config.module
+    //   .rule('file')
+    //   .test(/\.(png|jpe?g|gif)$/)
+    //   .use('url-loader')
+    //   .loader('url-loader')
+    //   .end();
   }
 };

@@ -1,1 +1,9 @@
 declare module '*.svg';
+declare module "*.png";
+declare module "*.jpg";
+declare module "*.jpeg";
+declare module 'bpmn-js/lib/Modeler';
+declare module 'bpmn-js-properties-panel';
+declare module 'bpmn-js-properties-panel/lib/provider/camunda';
+declare module 'camunda-bpmn-moddle/resources/camunda';
+declare module 'lodash.debounce';

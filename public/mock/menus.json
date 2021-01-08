@@ -48,6 +48,19 @@
         "status": "Valid",
         "key": "threejs",
         "component": "libs/threejs/Index.vue"
+      },
+      {
+        "id": 1300,
+        "pid": 1000,
+        "type": 0,
+        "url": "/libs/bpmn",
+        "name": "BPMN",
+        "icon": "apartment",
+        "modifier": "admin",
+        "modifiedDate": "1990-01-01T00:00:00.000Z",
+        "status": "Valid",
+        "key": "bpmn",
+        "component": "libs/bpmn/Index.vue"
       }
     ]
   },

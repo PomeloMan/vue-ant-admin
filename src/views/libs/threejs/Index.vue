@@ -21,7 +21,7 @@ const countries: Array<Country> = [
 ];
 
 @Component
-export default class GanttComponent extends Mixins(Vue) {
+export default class ThreeComponent extends Mixins(Vue) {
   scene!: THREE.Scene; // 场景
   camera!: THREE.PerspectiveCamera; // 透视相机
   renderer!: THREE.WebGLRenderer; // 渲染器

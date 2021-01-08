@@ -1,20 +1,21 @@
 <template>
   <div class="image-upload">
     <a-upload
-      accept=".jpg, .jpeg, .png"
-      listType="picture-card"
+      :accept="accept"
+      :listType="listType"
       :fileList="__files"
       :multiple="multiple"
-      :showUploadList="true"
+      :showUploadList="showUploadList"
       :disabled="disabled"
       :remove="handleRemove"
       :beforeUpload="beforeUpload"
       @preview="handlePreview"
     >
-      <div v-if="__files.length < limit.length">
+      <div v-if="__files.length < limit.length && listType === 'picture-card'">
         <a-icon :type="uploading ? 'loading' : 'plus'" />
         <div class="ant-upload-text">{{ $t('common.upload') }}</div>
       </div>
+      <slot name="upload-btn"></slot>
     </a-upload>
     <a-modal
       :visible="previewVisible"
@@ -32,7 +33,15 @@ import { Component, Model, Prop, Vue, Watch } from 'vue-property-decorator';
 import { getBase64 } from '@/shared/utils';
 
 @Component
-export default class FormComponent extends Vue {
+export default class UploadComponent extends Vue {
+  @Prop({ type: String, default: '.jpg, .jpeg, .png' })
+  accept!: string;
+  // 显示方式
+  @Prop({ type: String, default: 'picture-card' })
+  listType!: string;
+  // 是否显示上传列表
+  @Prop({ type: Boolean, default: true })
+  showUploadList!: boolean;
   // 是否多文件上传
   @Prop({ type: Boolean, default: true })
   multiple!: boolean;
@@ -55,7 +64,8 @@ export default class FormComponent extends Vue {
   limit!: { width: number; height: number; size: number; length: number };
   @Prop() width?: number; // 上传组件宽度
   @Prop() height?: number; // 上传组件高度
-
+  @Prop({ type: Boolean, default: true }) needImageValidation!: boolean; // 是否为图片，如果是图片则验证图片大小及宽高
+  @Prop({ type: Function, default: () => {} }) beforeUploadCallback!: Function;
   uploading = false; // 上传中
   previewVisible = false; // 预览
   previewImageUrl = ''; // 预览文件URL
@@ -111,6 +121,13 @@ export default class FormComponent extends Vue {
   }
   // 上传验证
   beforeUpload(file: any) {
+    if (this.needImageValidation) {
+      this.validateImage(file);
+    }
+    this.beforeUploadCallback(file);
+    return false;
+  }
+  validateImage(file: any) {
     // 校验图片
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
     if (!isJpgOrPng) {
@@ -177,6 +194,7 @@ export default class FormComponent extends Vue {
       .catch(() => {
         $this.uploading = false;
       });
+    // 返回false控制手动请求
     return false;
   }
 }
