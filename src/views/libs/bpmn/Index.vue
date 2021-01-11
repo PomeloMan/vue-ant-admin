@@ -46,9 +46,14 @@ import Modeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
 import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda';
 import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
+import bpmnTranslate from '@/assets/libs/bpmn/i18n/index';
 
 import debounce from 'lodash.debounce';
 import AppUpload from '@/shared/components/upload/Index.vue';
+
+const bpmnTranslateModule = {
+  translate: [ 'value', bpmnTranslate ]
+}
 
 @Component({
   components: {
@@ -77,7 +82,11 @@ export default class BpmnComponent extends Mixins(Vue) {
       propertiesPanel: {
         parent: '#js-properties-panel',
       },
-      additionalModules: [propertiesProviderModule, propertiesPanelModule],
+      additionalModules: [
+        propertiesProviderModule,
+        propertiesPanelModule,
+        bpmnTranslateModule
+      ],
       moddleExtensions: {
         camunda: camundaModdleDescriptor,
       },
