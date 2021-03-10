@@ -1,0 +1,362 @@
+[
+  {
+    "time": "2020-08-20",
+    "consumeTime": 11868,
+    "completeTime": 749.483,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-21",
+    "consumeTime": 9786,
+    "completeTime": 1153.7,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-22",
+    "consumeTime": 11824,
+    "completeTime": 779.817,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-23",
+    "consumeTime": 8860,
+    "completeTime": 738.117,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-24",
+    "consumeTime": 14253,
+    "completeTime": 943.3,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-25",
+    "consumeTime": 18015,
+    "completeTime": 1192.983,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-26",
+    "consumeTime": 20298,
+    "completeTime": 1136.317,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-27",
+    "consumeTime": 14937,
+    "completeTime": 1131.9,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-28",
+    "consumeTime": 12541,
+    "completeTime": 903.467,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-29",
+    "consumeTime": 16244,
+    "completeTime": 930.733,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-30",
+    "consumeTime": 15247,
+    "completeTime": 809.867,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-31",
+    "consumeTime": 10402,
+    "completeTime": 765.233,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-01",
+    "consumeTime": 11440,
+    "completeTime": 796.367,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-02",
+    "consumeTime": 10345,
+    "completeTime": 792.867,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-03",
+    "consumeTime": 19459,
+    "completeTime": 1036.017,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-04",
+    "consumeTime": 10763,
+    "completeTime": 882.867,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-05",
+    "consumeTime": 12074,
+    "completeTime": 753.8,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-06",
+    "consumeTime": 12770,
+    "completeTime": 956.683,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-07",
+    "consumeTime": 13206,
+    "completeTime": 877.15,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-08",
+    "consumeTime": 12434,
+    "completeTime": 873.283,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-09",
+    "consumeTime": 17218,
+    "completeTime": 933.3,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-10",
+    "consumeTime": 12914,
+    "completeTime": 893.517,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-11",
+    "consumeTime": 17781,
+    "completeTime": 994.45,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-12",
+    "consumeTime": 11555,
+    "completeTime": 825.55,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-13",
+    "consumeTime": 11899,
+    "completeTime": 809.967,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-14",
+    "consumeTime": 11713,
+    "completeTime": 887.6,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-15",
+    "consumeTime": 1000,
+    "completeTime": 744.183,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-16",
+    "consumeTime": 0,
+    "completeTime": 1166.65,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-17",
+    "consumeTime": 21357,
+    "completeTime": 1032.45,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-09-18",
+    "consumeTime": 11424,
+    "completeTime": 853.583,
+    "type": "分类0"
+  },
+  {
+    "time": "2020-08-20",
+    "consumeTime": 10868,
+    "completeTime": 649.483,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-21",
+    "consumeTime": 8786,
+    "completeTime": 1053.7,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-22",
+    "consumeTime": 10824,
+    "completeTime": 679.817,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-23",
+    "consumeTime": 7860,
+    "completeTime": 638.117,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-24",
+    "consumeTime": 13253,
+    "completeTime": 843.3,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-25",
+    "consumeTime": 17015,
+    "completeTime": 1092.983,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-26",
+    "consumeTime": 19298,
+    "completeTime": 1036.317,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-27",
+    "consumeTime": 13937,
+    "completeTime": 1031.9,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-28",
+    "consumeTime": 11541,
+    "completeTime": 803.467,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-29",
+    "consumeTime": 15244,
+    "completeTime": 830.733,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-30",
+    "consumeTime": 14247,
+    "completeTime": 709.867,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-08-31",
+    "consumeTime": 9402,
+    "completeTime": 665.233,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-01",
+    "consumeTime": 10440,
+    "completeTime": 696.367,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-02",
+    "consumeTime": 9345,
+    "completeTime": 692.867,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-03",
+    "consumeTime": 18459,
+    "completeTime": 936.017,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-04",
+    "consumeTime": 9763,
+    "completeTime": 782.867,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-05",
+    "consumeTime": 11074,
+    "completeTime": 653.8,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-06",
+    "consumeTime": 11770,
+    "completeTime": 856.683,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-07",
+    "consumeTime": 12206,
+    "completeTime": 777.15,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-08",
+    "consumeTime": 11434,
+    "completeTime": 773.283,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-09",
+    "consumeTime": 16218,
+    "completeTime": 833.3,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-10",
+    "consumeTime": 11914,
+    "completeTime": 793.517,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-11",
+    "consumeTime": 16781,
+    "completeTime": 894.45,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-12",
+    "consumeTime": 10555,
+    "completeTime": 725.55,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-13",
+    "consumeTime": 10899,
+    "completeTime": 709.967,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-14",
+    "consumeTime": 10713,
+    "completeTime": 787.6,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-15",
+    "consumeTime": 0,
+    "completeTime": 644.183,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-16",
+    "consumeTime": 0,
+    "completeTime": 1066.65,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-17",
+    "consumeTime": 20357,
+    "completeTime": 932.45,
+    "type": "分类1"
+  },
+  {
+    "time": "2020-09-18",
+    "consumeTime": 10424,
+    "completeTime": 753.583,
+    "type": "分类1"
+  }
+]
