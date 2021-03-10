@@ -58,6 +58,7 @@ export default class G2PlotArea extends Vue {
         },
       });
       chart.axis(false);
+      chart.legend(false);
       // 绘制世界地图背景
       const ds = new DataSet();
       const chinaMap = ds.createView('back').source(data, {
@@ -81,7 +82,7 @@ export default class G2PlotArea extends Vue {
         });
       chinaMapView.interaction('element-active');
 
-      // 获知动态数据
+      // 获知动态数据并绘制区域
       const dynamicDv = ds
         .createView()
         .source(d)
@@ -96,6 +97,10 @@ export default class G2PlotArea extends Vue {
       dynamicView
         .polygon()
         .position('longitude*latitude')
+        .color(
+          'value',
+          '#F51D27-#FA541C-#FF8C12-#FFC838-#FAFFA8-#80FF73-#12CCCC-#1890FF-#6E32C2'
+        )
         .tooltip('name*value')
         .state(this.getStateStyle())
         .style({
@@ -119,8 +124,8 @@ export default class G2PlotArea extends Vue {
       chart.on('polygon:click', (ev: any) => {
         const intervalElement = ev.target.get('element');
         const data = intervalElement.getModel().data; // 单条数据
-        console.log(data)
-        $this.$emit('selected', ev)
+        console.log(data);
+        $this.$emit('selected', ev);
       });
       chart.render();
       this.chart = chart;
